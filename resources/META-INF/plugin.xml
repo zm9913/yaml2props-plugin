@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>cn.sugarapp.plugins.yaml2props</id>
+    <name>convert yaml to properties</name>
+    <version>1.0.1</version>
+    <vendor email="zm9913@sina.cn" url="https://www.sugarapp.cn/">sugar</vendor>
+
+    <description><![CDATA[
+      - At first select yaml file.
+      - Convert action is also available from the context menu after right-clicking yaml file. You can find it also in the menu:
+        Code -> convert yaml to properties.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      1.0.1 modify description<br/>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="cn.sugarapp.plugins.yaml2props.ConvertAction" class="cn.sugarapp.plugins.yaml2props.ConvertAction"
+                text="convert yaml to properties" description="convert yaml to properties">
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
